@@ -1,14 +1,14 @@
+require("dotenv").config();
 const express = require('express');
 const bodyparser = require('body-parser');
 const path = require('path');
 const currentDate = require(path.join(__dirname, "date.js"));
 const mongoose = require("mongoose");
 var _ = require("lodash");
-
 const app = express();
 const portNum = process.env.PORT || 8800;
 
-mongoose.connect("mongodb+srv://abrarfaiz:Abrarfaiz2914@cluster0.kocdou0.mongodb.net/todoList");
+mongoose.connect(process.env.URI);
 
 
 
