@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="dateinfo">
+            <%= dateInfo%>
+        </div>
+        <div class="todoIteams">
+            <ul>
+                <% for(var i=0;i<newWorksTodo.length;i++) { %>
+                    <form action="/delete" method="POST">
+                    <li class="container"><label class="textlable"><input type="checkbox" value="<%=newWorksTodo[i]._id%>" class="stdCheckbox" name="checkboxValue" onchange="this.form.submit()"><span class="customcheckbox"></span>
+                        <span> <%=newWorksTodo[i].work%></span>
+                        </label></li>
+                    </form>
+                    <% } %>
+            </ul class="">
+            <form action="/lists/<%=pagename%>" method="POST">
+                <input class="newIteamTextArea" type="text" name="newWork" placeholder="New Item" required>
+                <button class="newIteamAddbtn" type="submit">+</button>
+            </form>
+        </div>
+        <div class="homebtn">
+            <a class="homebtnlink" href="/">Back To Home</a>
+        </div>
+    </div>
+</body>
+</html>

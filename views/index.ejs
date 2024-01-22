@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>let's track</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="main-block">
+    <h1 class="homepageTitle">Horrya!! let's track works 💖</h1>
+    <form action="/addlists" method="POST">
+      <div class="customlistsNamediv"><input class="customlistsName" type="text" name="listName"
+          placeholder="Name Your list " required><button class="customlistsNamebtn" type="submit">+</button></div>
+    </form>
+    <form action="/deletelist" method="post">
+      <% for(var i=0;i<userCreatedLists.length;i++){ %>
+        <div class="custlistsName"><a class="listnamelink" href="/lists/<%=userCreatedLists[i].name%>">
+            <%=userCreatedLists[i].name%>
+          </a><button class="listdeletebtn" name="listval" value="<%=userCreatedLists[i].name%>">x</button></div>
+        <% } %>
+    </form>
+  </div>
+</body>
+
+</html>
